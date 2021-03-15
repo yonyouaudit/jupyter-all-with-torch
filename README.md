@@ -37,7 +37,7 @@ docker build -t jupyter-all-with-torch .
 ## Run
 
 ~~~bash
-sudo docker run -d -p 8888:8888 --restart=always -v /home/pubserver/jupyter_vol:/home/jovyan --name jupyter-online  sunnytu/jupyter-all-with-torch:latest
+sudo docker run -d -p 8888:8888 --restart=always -v /home/pubserver/jupyter_vol:/home/jovyan --name=jupyter-online sunnytu/jupyter-all-with-torch:1.0.0
 ~~~
 
 ## Using jupyter notebook
@@ -57,3 +57,12 @@ http://0.0.0.0:8888/?token=e8ddb2e1db38e90e81b7c518c5da7f6c956668f180d1f05e :: /
 
 > e8ddb2e1db38e90e81b7c518c5da7f6c956668f180d1f05e is login token
 
+
+## About token
+you can set password when you run container
+eg.
+~~~bash
+sudo docker run -d -p 8888:8888 --restart=always -v /home/pubserver/jupyter_vol:/home/jovyan --name=jupyter-online -e JUPYTER_TOKEN=123456 sunnytu/jupyter-all-with-torch:1.0.0
+~~~
+
+login password is `123456`
